@@ -9,6 +9,6 @@ namespace DBZDungeonLibrary
     public enum Race
     {
         Hybrid,
-        Saiyan,
+        
     }
 }
