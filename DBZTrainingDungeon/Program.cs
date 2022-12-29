@@ -117,7 +117,7 @@ namespace DBZTrainingDungeon
 
                         case "P":
 
-                            Console.WriteLine("Player:");
+                            
                             Console.WriteLine(player);
                             Console.WriteLine("Experience gained: " + XP);
                             break;
