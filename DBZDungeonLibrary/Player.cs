@@ -28,6 +28,7 @@ namespace DBZDungeonLibrary
                 case Race.Hybrid:
                     HitChance += 5;
                     Life += 5;
+                    Block += 2;
                     break;
 
             }

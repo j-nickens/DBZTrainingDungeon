@@ -35,12 +35,12 @@ namespace DBZTrainingDungeon
 
             //Weapon(Weapon.PickWeapon());
             Weapon w1 = new Weapon(1, 8, "The Brave Sword", 10, true, WeaponType.The_Brave_Sword);
-            Console.WriteLine(w1);//Ask about how to add weapon choices.
+            //Console.WriteLine(w1);//Ask about how to add weapon choices.
 
             //Weapon w2 = new Weapon(1, 10, "The Z Sword", 7, true, WeaponType.Z_Sword);//Ask how to get this added in as an optional weapon
             //Add a switch for option to switch swords?? Do I need to make another weapon class in the Weapon.cs?
 
-            Player player = new Player("Future Trunks", 70, 5, 40, Race.Hybrid, w1);
+            Player player = new Player("Future Trunks", 70, 5, 45, Race.Hybrid, w1);
 
             #endregion
 
