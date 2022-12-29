@@ -42,7 +42,7 @@ namespace DBZDungeonLibrary
             Name = name;
             BonusHitChance = bonusHitChance;
             IsTwoHanded = isTwoHanded;
-            Type = type;//Block 3 - Added Weapon Type prop to CTOR
+            Type = type;
         }
         //Methods - Monkeys
         public override string ToString()
