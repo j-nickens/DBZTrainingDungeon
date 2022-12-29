@@ -1,4 +1,6 @@
 ﻿
+using DBZDungeonLibrary;
+
 namespace DBZTrainingDungeon
 {
     internal class Program
@@ -28,13 +30,13 @@ namespace DBZTrainingDungeon
             #endregion
 
             int score = 0;//player score
-            
-            
 
-            //Weapon w1 = new Weapon(1, 8, "Long Sword", 10, true);
-            //Console.WriteLine(w1);UNCOMMENT AFTER WEAPON IS CREATED
 
-            //Player player = new Player("Leeroy Jenkins", 70, 5, 40, Race.Human, w1);//UNCOMMENT AFTER CHARACTER CLASS IS CREATED
+
+            Weapon w1 = new Weapon(1, 8, "The Brave Sword", 10, true, WeaponType.The_Brave_Sword);
+            Console.WriteLine(w1);//Ask about how to add weapon choices.
+
+            //Player player = new Player("Future Trunks", 80, 5, 40, Race.Hybrid, w1);//UNCOMMENT WHEN PLAYER IS CREATED
             #endregion
 
 
