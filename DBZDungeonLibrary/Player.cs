@@ -27,8 +27,7 @@ namespace DBZDungeonLibrary
 
                 case Race.Hybrid:
                     HitChance += 5;
-                    Life -= 5;
-                    MaxLife += 5;
+                    Life += 5;
                     break;
 
             }
@@ -39,7 +38,6 @@ namespace DBZDungeonLibrary
             return playerRace switch
             {
                 Race.Hybrid => "Hybrid",
-                Race.Saiyan => "Saiyan",
                 
                 
             };

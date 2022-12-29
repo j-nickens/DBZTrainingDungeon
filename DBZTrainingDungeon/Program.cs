@@ -13,7 +13,8 @@ namespace DBZTrainingDungeon
             Console.WriteLine("@__\r\n  |  \"\"--.--.._                                             __..    ,--.\r\n  |       `.   \"-.'\"\"\\_...-----..._   ,--. .--..-----.._.\"\"|   |   /   /\r\n  |_   _    \\__   ).  \\           _/_ |   \\|  ||  ..    >  `.  |  /   /\r\n    | | `.   ._)  /|\\  \\ .-\"\"\"\":-\"   \"-.   `  ||  |.'  ,'`. |  |_/_  /\r\n    | |_.'   |   / \"\"`  \\  ===/  ..|..  \\     ||      < \"\"  `.  \"  |/__\r\n    `.      .    \\ ,--   \\-..-\\   /\"\\   /     ||  |>   )--   |    /    |\r\n     |__..-'__||__\\   |___\\ __.:-.._..-'_|\\___||____..-/  |__|--\"\"____/\r\n                           _______________________\r\n                          /                      ,'\r\n                         /      ___            ,'\r\n                        /   _.-'  ,'        ,-'   /\r\n                       / ,-' ,--.'        ,'   .'/\r\n                      /.'     `.         '.  ,' /\r\n                     /      ,-'       ,\"--','  /\r\n                          ,'        ,'  ,'    /\r\n                         ,-'      ,' .-'     /\r\n                      ,-'                   /\r\n                    ,:________________Seal_/\r\n\r\n");
 
 
-            Console.WriteLine("On today's episode...Bulma and the Capsule Corp, created a prototype called \"The Capsule Corp Training Dungeon\" that may change the way the Z Fighters train and grow stronger! With the newest threat looming Trunks offers to give it a try......Little does he know once you enter you lose all powers. Leaving trunks one option, to go into battle using only his sword....Will this be an effective way to train?...What kind of enemies will he find inside??? FIND OUT ON THIS EPISODE OF DRAGON BALL Z!!!\n");
+            Console.WriteLine("On today's episode...Bulma and the Capsule Corp, created a prototype called \"The Capsule Corp Training Dungeon\" that may change the way the Z Fighters train and grow stronger! With the newest threat looming Trunks offers to give it a try......Little does he know once you enter you lose all powers. Leaving trunks one option, to go  into battle using only his sword....Will this be an effective way to train?...What kind of enemies will he find inside??? FIND OUT ON THIS EPISODE OF DRAGON BALL Z!!!\n");
+            //ask how to format this to look better in the console
             
             #endregion
 
@@ -29,14 +30,18 @@ namespace DBZTrainingDungeon
             //Could also show  list of pre created players
             #endregion
 
-            int score = 0;//player score
+            int XP = 0;//player score
 
 
-
+            //Weapon(Weapon.PickWeapon());
             Weapon w1 = new Weapon(1, 8, "The Brave Sword", 10, true, WeaponType.The_Brave_Sword);
             Console.WriteLine(w1);//Ask about how to add weapon choices.
 
-            //Player player = new Player("Future Trunks", 80, 5, 40, Race.Hybrid, w1);//UNCOMMENT WHEN PLAYER IS CREATED
+            //Weapon w2 = new Weapon(1, 10, "The Z Sword", 7, true, WeaponType.Z_Sword);//Ask how to get this added in as an optional weapon
+            //Add a switch for option to switch swords?? Do I need to make another weapon class in the Weapon.cs?
+
+            Player player = new Player("Future Trunks", 70, 5, 40, Race.Hybrid, w1);
+
             #endregion
 
 
@@ -113,8 +118,8 @@ namespace DBZTrainingDungeon
                         case "P":
 
                             Console.WriteLine("Player:");
-                            //Console.WriteLine(player);
-                            Console.WriteLine("Enemies Destroyed: " + score);
+                            Console.WriteLine(player);
+                            Console.WriteLine("Experience gained: " + XP);
                             break;
 
                         case "M":
@@ -137,19 +142,19 @@ namespace DBZTrainingDungeon
                     #endregion
 
 
-                    //if (player.Life <= 0)//UNCOMMENT AFTER PLAYER IS CREATED
-                    //{
-                    //    Console.WriteLine("Dude......you died!\a");
-                    //    //Quit = !quit; //flip the bool to whatever it isnt.
-                    //    quit = true;
-                    //}
+                    if (player.Life <= 0)
+                    {
+                        Console.WriteLine("Dude......you died!\a");
+                        //Quit = !quit; //flip the bool to whatever it isnt.
+                        quit = true;
+                    }
                 } while (!reload && !quit);
                 #endregion
             } while (!quit);
             #endregion
 
             //Output the final score and say goodbye
-            Console.WriteLine("You have defeated: " + score + " Villian" + (score == 1 ? "." : "s.\n"));
+            Console.WriteLine("You have gained: " + XP + "Training Experience" + (XP == 1 ? "." : "s.\n"));
             Console.WriteLine("\n@    _.\r\n                         ,-\" .\\,-\"`.\r\n                       ,:   . /,-.  `.\r\n                      /\"     :,-  `   \\\r\n                     |.    .`/,. `.    \\\r\n                    /  /  /_\\)/_\\       .\r\n                   .  .  /' / \\ \"\\\r\n                   |  : ,' .   . \\ \\\\ . |\r\n                   |  : || |   | | || . '\r\n                   \\__\\_bo..  ...bo)L L/\r\n    T R U N K S      |9|\\_*_\" \"_*_/|?T\r\n                     \\(` --- L --- ')/\r\n     (future)       .'`-|   ___   |-:\r\n               .---\"  -. .   =   ,   `.\r\n               \"\"-._ --./ \"-._.-\"|     \"-._\r\n                  .-\"-. \\  \\      \\   _..-<_\r\n              .--\"     ) `. \\   /  | :-\"..  \\\r\n           .-'_     \\ ,'  \\\\\"`.,'\"\"   \\   `  |\r\n          /    `.    | \"-. `   \\    |/\"    | \\\r\n              .  \\      _ \\:|   |  ,|.\"\"\"\"\"| /\r\n         /   :    |.-\"\"\" | \\|`._'_.  |`.  .( \\\r\n        /|  '     ||_  .' `:'        |: `v \\  |\r\n       / | :      |  \"\")  :|         |:  |  | |\r\n       |          /|   /  :|         |:  /  / )\r\n       (         | /_.|...:|         /  |  |  |\r\n      / \\        /_..-----\"'         \"\"\"-,-   |\r\n     |          /`--\\                   |\\  `.)\r\n     |         |     |                ,/ `. `.\\\r\n     /   _Seal_|      \"._..---\"\"\"\"---./\\ ` `. )");
 
         }//end Main()
