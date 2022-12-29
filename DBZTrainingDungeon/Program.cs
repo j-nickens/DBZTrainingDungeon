@@ -3,11 +3,16 @@ namespace DBZTrainingDungeon
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
             #region Title / Introduction
-            Console.Title = "Capsule Corp Training Dungeon";
-            Console.WriteLine("Your journey begins...\n");
+            Console.Title = "======= Capsule Corp Training Dungeon =======";
+            Console.WriteLine("@__\r\n  |  \"\"--.--.._                                             __..    ,--.\r\n  |       `.   \"-.'\"\"\\_...-----..._   ,--. .--..-----.._.\"\"|   |   /   /\r\n  |_   _    \\__   ).  \\           _/_ |   \\|  ||  ..    >  `.  |  /   /\r\n    | | `.   ._)  /|\\  \\ .-\"\"\"\":-\"   \"-.   `  ||  |.'  ,'`. |  |_/_  /\r\n    | |_.'   |   / \"\"`  \\  ===/  ..|..  \\     ||      < \"\"  `.  \"  |/__\r\n    `.      .    \\ ,--   \\-..-\\   /\"\\   /     ||  |>   )--   |    /    |\r\n     |__..-'__||__\\   |___\\ __.:-.._..-'_|\\___||____..-/  |__|--\"\"____/\r\n                           _______________________\r\n                          /                      ,'\r\n                         /      ___            ,'\r\n                        /   _.-'  ,'        ,-'   /\r\n                       / ,-' ,--.'        ,'   .'/\r\n                      /.'     `.         '.  ,' /\r\n                     /      ,-'       ,\"--','  /\r\n                          ,'        ,'  ,'    /\r\n                         ,-'      ,' .-'     /\r\n                      ,-'                   /\r\n                    ,:________________Seal_/\r\n\r\n");
+
+
+            Console.WriteLine("On today's episode...Bulma and the Capsule Corp, has created a prototype that may change the way the Z Fighters train! With the newest threat looming Trunks offers to give it a try......Little does he know once you enter you lose all powers. Leaving trunks one option, to go into battle using only his sword....Will this be an effective way to train?...What kind of enemies will he find inside??? FIND OUT ON THIS EPISODE OF DRAGON BALL Z!!!\n");
+            
             #endregion
 
             #region Player Creation
@@ -107,12 +112,12 @@ namespace DBZTrainingDungeon
 
                             Console.WriteLine("Player:");
                             //Console.WriteLine(player);
-                            Console.WriteLine("Monsters SLain: " + score);
+                            Console.WriteLine("Enemies Destroyed: " + score);
                             break;
 
                         case "M":
 
-                            Console.WriteLine("Monster");
+                            Console.WriteLine("Villian");
                             //Console.WriteLine(monster);//UNCOMMENT AFTER VILLIANS/MONSTERS ARE CREATED
                             break;
 
@@ -120,11 +125,11 @@ namespace DBZTrainingDungeon
                         case "E":
                         case "Escape":
                             quit = true;
-                            Console.WriteLine("No one likes a quitter...");
+                            Console.WriteLine("NO, WE WON'T GET STRONGER BY QUITTING!!??...");
                             break;//exit both loops
 
                         default:
-                            Console.WriteLine("Thou hast chosen an improper option. Triest thou again.");
+                            Console.WriteLine("This is not an option. Are you ok? :) ");
                             break;
                     }//end switch
                     #endregion
@@ -142,7 +147,7 @@ namespace DBZTrainingDungeon
             #endregion
 
             //Output the final score and say goodbye
-            Console.WriteLine("You defeated " + score + " monster" + (score == 1 ? "." : "s."));
+            Console.WriteLine("You have defeated: " + score + " Villian" + (score == 1 ? "." : "s."));
 
         }//end Main()
 
@@ -152,22 +157,18 @@ namespace DBZTrainingDungeon
         {
             string[] rooms =
             {
-                "T",
-                "Y",
-                "Y",
-                "",
-                "A",
-                "O",
-                "Y",
-                "O",
-                "T",//CREATE ROOM DESCRIPTIONS
+                "This room, It looks just like Dr. Geros lab!!",
+                "As I enter this room I soon realize, this is Korin's Tower...",
+                "WHAT.... THIS IS THE HYPERBOLIC TIME CHAMBER!!!??",
+                "How...This room is an exact replica of planet Namek!!",
+                "This, this is Satan City how is this possible?",
+                "I remember this place....The Kame house.",
+                "This place must be otherworld .....there is an errie silence",
+                "This can't be.....It's MAJIIN BUU's HOUSE!",
+                "So here we are in the martial arts tournament arena!",
             };
-            Random rand = new Random();
-            int index = rand.Next(rooms.Length);
-            string room = rooms[index];
-            return room;
-            //possible refactor
-            //return rooms[new Random().Next(rooms.Length)];
+            return rooms[new Random().Next(rooms.Length)];
+            
         }//end GetRoom()
 
         #endregion
