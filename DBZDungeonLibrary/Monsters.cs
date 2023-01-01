@@ -69,7 +69,6 @@ namespace DBZDungeonLibrary
             var coolerJr = new Cooler();
             var gokuWack = new GokuBlack();
             var miniFrieza = new Frieza();
-            //TODO UNCOMMENT AFTER MONSTER ARE CREATED INDIVIDUALLY
             //Add the monsters to a collection
             List<Monster> monsters = new List<Monster>()
             {
