@@ -23,8 +23,8 @@ namespace DBZDungeonLibrary
             MaxDamage = 4;
             Name = "Mini-Frieza";
             Life = 7;
-            HitChance = 15;
-            Block = 20;
+            HitChance = 25;
+            Block = 19;
             MinDamage = 1;
             Description = "Aww cute little Frieza! Whoa his power level is pretty high still!...";
             IsFinalForm = false;

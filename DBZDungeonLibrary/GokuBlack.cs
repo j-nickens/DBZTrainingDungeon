@@ -22,8 +22,8 @@ namespace DBZDungeonLibrary
             MaxDamage = 3;
             Name = "Goku Wack";
             Life = 5;
-            HitChance = 20;
-            Block = 15;
+            HitChance = 25;
+            Block = 12;
             MinDamage = 1;
             Description = "An earthling dressed as goku black!...";
             IsSSR = false;

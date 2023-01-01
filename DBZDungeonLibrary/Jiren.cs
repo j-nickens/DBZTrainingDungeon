@@ -23,7 +23,7 @@ namespace DBZDungeonLibrary
             Name = "Baby Jiren";
             Life = 5;
             HitChance = 20;
-            Block = 15;
+            Block = 10;
             MinDamage = 1;
             Description = "A baby jiren, his head is so big!...";
             IsEnraged = false;

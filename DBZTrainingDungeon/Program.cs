@@ -10,11 +10,13 @@ namespace DBZTrainingDungeon
         {
             #region Title / Introduction
             Console.Title = "======= Capsule Corp Training Dungeon =======";
+
             Console.WriteLine("@__\r\n  |  \"\"--.--.._                                             __..    ,--.\r\n  |       `.   \"-.'\"\"\\_...-----..._   ,--. .--..-----.._.\"\"|   |   /   /\r\n  |_   _    \\__   ).  \\           _/_ |   \\|  ||  ..    >  `.  |  /   /\r\n    | | `.   ._)  /|\\  \\ .-\"\"\"\":-\"   \"-.   `  ||  |.'  ,'`. |  |_/_  /\r\n    | |_.'   |   / \"\"`  \\  ===/  ..|..  \\     ||      < \"\"  `.  \"  |/__\r\n    `.      .    \\ ,--   \\-..-\\   /\"\\   /     ||  |>   )--   |    /    |\r\n     |__..-'__||__\\   |___\\ __.:-.._..-'_|\\___||____..-/  |__|--\"\"____/\r\n                           _______________________\r\n                          /                      ,'\r\n                         /      ___            ,'\r\n                        /   _.-'  ,'        ,-'   /\r\n                       / ,-' ,--.'        ,'   .'/\r\n                      /.'     `.         '.  ,' /\r\n                     /      ,-'       ,\"--','  /\r\n                          ,'        ,'  ,'    /\r\n                         ,-'      ,' .-'     /\r\n                      ,-'                   /\r\n                    ,:________________Seal_/\r\n\r\n");
 
 
-            Console.WriteLine("On today's episode...Bulma and the Capsule Corp, created a prototype called \"The Capsule Corp Training Dungeon\" that may change the way the Z Fighters train and grow stronger! With the newest threat looming Trunks offers to give it a try......Little does he know once you enter you lose all powers. Leaving trunks one option, to go  into battle using only his sword....Will this be an effective way to train?...What kind of enemies will he find inside??? FIND OUT ON THIS EPISODE OF DRAGON BALL Z!!!\n");
+            Console.WriteLine("On today's episode...Bulma and the Capsule Corp, created a prototype called \"The Capsule Corp Training Dungeon\" that may change the way the Z Fighters train and grow stronger! With the newest threat looming Trunks offers to give it a try......Little does he know once you enter you lose all powers. Leaving trunks one option, to go  into battle using only his sword....Will this be an effective way to train?...What kind of enemies will he find inside??? FIND OUT ON THIS EPISODE OF DRAGON BALL Z!!!\n\n\n\n");
             //ask how to format this to look better in the console
+            
             
             #endregion
 
@@ -34,13 +36,13 @@ namespace DBZTrainingDungeon
 
 
             //Weapon(Weapon.PickWeapon());
-            Weapon w1 = new Weapon(1, 8, "The Brave Sword", 10, true, WeaponType.The_Brave_Sword);
+            Weapon w1 = new Weapon(1, 10, "The Brave Sword", 10, true, WeaponType.The_Brave_Sword);
             //Console.WriteLine(w1);//Ask about how to add weapon choices.
 
             //Weapon w2 = new Weapon(1, 10, "The Z Sword", 7, true, WeaponType.Z_Sword);//Ask how to get this added in as an optional weapon
             //Add a switch for option to switch swords?? Do I need to make another weapon class in the Weapon.cs?
 
-            Player player = new Player("Future Trunks", 70, 5, 45, Race.Hybrid, w1);
+            Player player = new Player("Future Trunks", 75, 15, 45, Race.Hybrid, w1);
 
             #endregion
 
@@ -51,6 +53,7 @@ namespace DBZTrainingDungeon
             {
 
                 Console.WriteLine(GetRoom());
+                Console.WriteLine();
                 #region potential expansion
                 //could crate a room datatype class
                 //Description, monsters to those specific rooms,
@@ -60,8 +63,8 @@ namespace DBZTrainingDungeon
 
 
 
-                //Monster monster = Monster.GetMonster();//Uncomment after creating monetser library 
-                //Console.WriteLine("In this room: " + monster.Name);//UNCOMMENT after monsters are created
+                Monster monster = Monster.GetMonster(); 
+                Console.WriteLine("IN THIS TRAINING ROOM: " + monster.Name);
                 //inner loop:
                 #region Gameplay Menu Loop
                 bool reload = false;
@@ -71,8 +74,8 @@ namespace DBZTrainingDungeon
                     Console.WriteLine("\nPlease choose an action:\n" +
                         "A) Attack\n" +
                         "R) Run Away\n" +
-                        "P) Player Info\n" +
-                        "M) Monster Info\n" +
+                        "H) Hero Info\n" +
+                        "V) Villian Info\n" +
                         "X) Exit\n");
 
                     string menuChoice = Console.ReadKey(true).Key.ToString();
@@ -86,46 +89,45 @@ namespace DBZTrainingDungeon
                             //if (player.PlayerRace == Race.Elf)
                             //{ Combat.DoAttack(player, monster) }
                             #endregion
-                            //Combat.DoBattle(player, monster);//Uncomment after Battle is created
-                            //check if monster is dead
-                           //if (monster.Life <= 0)
-                           //{
-                           //    //use green text to hightlight winning combat
-                           //    Console.ForegroundColor = ConsoleColor.Green;
-                           //    //Console.WriteLine($"\nYou killed {monster.Name}!");UNCOMMENT AFTER MONSTERS ARE CREATED
-                           //    Console.ResetColor();
-                           //    score++;
-                           //    #region Loot Drops
-                           //    //NOTE: This would require an "item class"
-                           //    //Player.Inventoty - List<Item>
-                           //    //Heal??
-                           //    player.Life += (player.Life / 5);
-                           //    #endregion
-                           //    //Leave the inner loop and get a new monster and room
-                           //    reload = true;
-                           //}
-                           //break;//UNCIMMENT AFTER VILLIANS ARE CREATED
+                           Combat.DoBattle(player, monster);
+                           //check if monster is dead
+                           if (monster.Life <= 0)
+                           {
+                               //use green text to hightlight winning combat
+                               Console.ForegroundColor = ConsoleColor.Green;
+                               //Console.WriteLine($"\nYou killed {monster.Name}!");UNCOMMENT AFTER MONSTERS ARE CREATED
+                               Console.ResetColor();
+                               XP++;
+                               #region Loot Drops
+                               //NOTE: This would require an "item class"
+                               //Player.Inventoty - List<Item>
+                               player.Life += (player.Life / 5);//player gets life back after successful battle.
+                               #endregion
+                               //Leave the inner loop and get a new monster and room
+                               reload = true;
+                           }
+                           break;
 
                         case "R":
 
                             Console.WriteLine("Run Away!");
-                            //Console.WriteLine($"{monster.Name} attacks you as you flee!");//UNCOMMENT AFTER VILLIANS CREATED
-                            //Combat.DoAttack(monster, player);
+                            Console.WriteLine($"{monster.Name} throws a Ki blast as you run away!!");
+                            Combat.DoAttack(monster, player);
                             Console.WriteLine();
                             reload = true; //generate a new monster and a new room
                             break;//exit 1 loop
 
-                        case "P":
+                        case "H":
 
                             
                             Console.WriteLine(player);
                             Console.WriteLine("Experience gained: " + XP);
                             break;
 
-                        case "M":
+                        case "V":
 
                             Console.WriteLine("Villian");
-                            //Console.WriteLine(monster);//UNCOMMENT AFTER VILLIANS/MONSTERS ARE CREATED
+                            Console.WriteLine(monster);
                             break;
 
                         case "X":
@@ -144,7 +146,7 @@ namespace DBZTrainingDungeon
 
                     if (player.Life <= 0)
                     {
-                        Console.WriteLine("Dude......you died!\a");
+                        Console.WriteLine("You were defeated in battle!!...\a");
                         //Quit = !quit; //flip the bool to whatever it isnt.
                         quit = true;
                     }
@@ -154,7 +156,7 @@ namespace DBZTrainingDungeon
             #endregion
 
             //Output the final score and say goodbye
-            Console.WriteLine("You have gained: " + XP + "Training Experience" + (XP == 1 ? "." : "s.\n"));
+            Console.WriteLine("You have gained: " + XP + " Training Experience" + (XP == 1 ? "." : "s.\n"));
             Console.WriteLine("\n@    _.\r\n                         ,-\" .\\,-\"`.\r\n                       ,:   . /,-.  `.\r\n                      /\"     :,-  `   \\\r\n                     |.    .`/,. `.    \\\r\n                    /  /  /_\\)/_\\       .\r\n                   .  .  /' / \\ \"\\\r\n                   |  : ,' .   . \\ \\\\ . |\r\n                   |  : || |   | | || . '\r\n                   \\__\\_bo..  ...bo)L L/\r\n    T R U N K S      |9|\\_*_\" \"_*_/|?T\r\n                     \\(` --- L --- ')/\r\n     (future)       .'`-|   ___   |-:\r\n               .---\"  -. .   =   ,   `.\r\n               \"\"-._ --./ \"-._.-\"|     \"-._\r\n                  .-\"-. \\  \\      \\   _..-<_\r\n              .--\"     ) `. \\   /  | :-\"..  \\\r\n           .-'_     \\ ,'  \\\\\"`.,'\"\"   \\   `  |\r\n          /    `.    | \"-. `   \\    |/\"    | \\\r\n              .  \\      _ \\:|   |  ,|.\"\"\"\"\"| /\r\n         /   :    |.-\"\"\" | \\|`._'_.  |`.  .( \\\r\n        /|  '     ||_  .' `:'        |: `v \\  |\r\n       / | :      |  \"\")  :|         |:  |  | |\r\n       |          /|   /  :|         |:  /  / )\r\n       (         | /_.|...:|         /  |  |  |\r\n      / \\        /_..-----\"'         \"\"\"-,-   |\r\n     |          /`--\\                   |\\  `.)\r\n     |         |     |                ,/ `. `.\\\r\n     /   _Seal_|      \"._..---\"\"\"\"---./\\ ` `. )");
 
         }//end Main()

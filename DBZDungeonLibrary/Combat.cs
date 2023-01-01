@@ -26,7 +26,7 @@ namespace DBZDungeonLibrary
                 defender.Life -= damageDealt;
                 //output the result
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"{attacker.Name} landed a stunning blow {defender.Name} for {damageDealt} damage!");
+                Console.WriteLine($"{attacker.Name} landed a stunning blow to {defender.Name} for {damageDealt} damage!");
                 Console.ResetColor();
             }
             else
@@ -35,24 +35,24 @@ namespace DBZDungeonLibrary
             }
         }//end DoAttack()
 
-        //public static void DoBattle(Player player, Monster monster)
-        //{
-        //    #region Potential Expansion - Initiative
-        //
-        //    //Consider adding an "Initiative" prop to Character
-        //    //Then check the initiative to see who attacks first
-        //    // if (player.Initiative >= monster.Initiative)
-        //    //DoAttack(player, monster)
-        //    // else 
-        //    //DoAttack(monster, player)
-        //    #endregion
-        //
-        //    DoAttack(player, monster);
-        //    if (monster.Life > 0)
-        //    {
-        //        DoAttack(monster, player);
-        //    }
-        //}    
-        //UNCOMMENT AFTER MONSTERS ARE CREATED
+        public static void DoBattle(Player player, Monster monster)
+        {
+            #region Potential Expansion - Initiative
+        
+            //Consider adding an "Initiative" prop to Character
+            //Then check the initiative to see who attacks first
+            // if (player.Initiative >= monster.Initiative)
+            //DoAttack(player, monster)
+            // else 
+            //DoAttack(monster, player)
+            #endregion
+        
+            DoAttack(player, monster);
+            if (monster.Life > 0)
+            {
+                DoAttack(monster, player);
+            }
+        }    
+        
     }
 }

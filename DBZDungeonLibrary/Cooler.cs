@@ -21,7 +21,7 @@ namespace DBZDungeonLibrary
             MaxDamage = 2;
             Name = "Cooler Jr";
             Life = 5;
-            HitChance = 13;
+            HitChance = 20;
             Block = 10;
             MinDamage = 1;
             Description = "It is a miniature version of Cooler...";
