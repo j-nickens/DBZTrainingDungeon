@@ -26,7 +26,7 @@ namespace DBZDungeonLibrary
                 defender.Life -= damageDealt;
                 //output the result
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"{attacker.Name} landed a stunning blow {defender.Name} for {damageDealt} damage!");
+                Console.WriteLine($"{attacker.Name} landed a stunning blow to {defender.Name} for {damageDealt} damage!");
                 Console.ResetColor();
             }
             else

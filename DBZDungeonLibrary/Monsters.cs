@@ -42,22 +42,22 @@ namespace DBZDungeonLibrary
         public static Monster GetMonster()
         {
             //Create a variety of Monsters
-            GokuBlack gokuBLack = new GokuBlack(name: "Goku Black", maxLife: 25, hitChance: 35,
+            GokuBlack gokuBLack = new GokuBlack(name: "Goku Black", maxLife: 25, hitChance: 60,
                 block: 20, minDamage: 2, maxDamage: 8, description: "That's not Goku his energy feels evil...!", isSSR: true);
             
             Jiren jiren = new Jiren(name: "Jiren", maxLife: 30, hitChance: 70,
                 block: 8, minDamage: 1, maxDamage: 9, description: "The hero of Universe 11!", isEnraged: true);
            
-            Cooler cooler = new Cooler(name: "Cooler", maxLife: 25, hitChance: 30,
+            Cooler cooler = new Cooler(name: "Cooler", maxLife: 25, hitChance: 55,
                 block: 10, minDamage: 1, maxDamage: 4, description: "The Brother of Lord Frieza", isPerfectCooler: true);
             
             Frieza frieza = new Frieza(name: "Frieza", maxLife: 20, hitChance: 65,
                 block: 20, minDamage: 1, maxDamage: 15, description: "The Destroyer of planets Lord Frieza", isFinalForm: true);
             
-            MajiinBuu buu = new MajiinBuu(name: "Majiin Buu", maxLife: 25, hitChance: 50,
+            MajiinBuu buu = new MajiinBuu(name: "Majiin Buu", maxLife: 25, hitChance: 68,
                 block: 20, minDamage: 1, maxDamage: 9, description: "Awakened by Bibidi, he is here to destroy everyone.", isKidBuu: true);
             
-            Cell cell = new Cell(name: "Cell", maxLife: 20, hitChance: 40,
+            Cell cell = new Cell(name: "Cell", maxLife: 20, hitChance: 60,
                 block: 15, minDamage: 1, maxDamage: 8, description: "Composed of cells from Piccolo, Vegeta, Frieza, and King Cold.", isPerfectCell: true);
 
 
