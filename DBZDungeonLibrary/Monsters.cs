@@ -39,38 +39,58 @@ namespace DBZDungeonLibrary
             return new Random().Next(MinDamage, MaxDamage + 1);
         }
 
-        //public static Monster GetMonster()
-        //{
+        public static Monster GetMonster()
+        {
             //Create a variety of Monsters
-            //Rabbit rabbit = new Rabbit(name: "White Rabbit", maxLife: 25, hitChance: 50,
-            //    block: 20, minDamage: 2, maxDamage: 8, description: "That's no ordinary rabbit! Look at the bones!", isFluffy: true);
-            //Vampire vampire = new Vampire(name: "Dracula", maxLife: 30, hitChance: 70,
-            //    block: 8, minDamage: 1, maxDamage: 8, description: "The father of all the undead");
-            //Turtle turtle = new Turtle(name: "Mikey", maxLife: 25, hitChance: 50,
-            //    block: 10, minDamage: 1, maxDamage: 4, description: "He is no longer a teenager but he is still /a/ mutant turle", bonusBlock: 3, //hidePercent: 10);
-            //Dragon dragon = new Dragon(name: "Smaug", maxLife: 20, hitChance: 65,
-            //    block: 20, minDamage: 1, maxDamage: 15, description: "The last great dragon.", isScaly: true);
+            GokuBlack gokuBLack = new GokuBlack(name: "Goku Black", maxLife: 25, hitChance: 35,
+                block: 20, minDamage: 2, maxDamage: 8, description: "That's not Goku his energy feels evil...!", isSSR: true);
+            
+            Jiren jiren = new Jiren(name: "Jiren", maxLife: 30, hitChance: 70,
+                block: 8, minDamage: 1, maxDamage: 9, description: "The hero of Universe 11!", isEnraged: true);
+           
+            Cooler cooler = new Cooler(name: "Cooler", maxLife: 25, hitChance: 30,
+                block: 10, minDamage: 1, maxDamage: 4, description: "The Brother of Lord Frieza", isPerfectCooler: true);
+            
+            Frieza frieza = new Frieza(name: "Frieza", maxLife: 20, hitChance: 65,
+                block: 20, minDamage: 1, maxDamage: 15, description: "The Destroyer of planets Lord Frieza", isFinalForm: true);
+            
+            MajiinBuu buu = new MajiinBuu(name: "Majiin Buu", maxLife: 25, hitChance: 50,
+                block: 20, minDamage: 1, maxDamage: 9, description: "Awakened by Bibidi, he is here to destroy everyone.", isKidBuu: true);
+            
+            Cell cell = new Cell(name: "Cell", maxLife: 20, hitChance: 40,
+                block: 15, minDamage: 1, maxDamage: 8, description: "Composed of cells from Piccolo, Vegeta, Frieza, and King Cold.", isPerfectCell: true);
+
+
             //TODO UNCOMMENT AFTER MONSTERS ARE INDIVIDUALLY CREATED
 
-            //var babyTurtle = new Turtle();
-            //var babyRabbit = new Rabbit();
-            //var babyDragon = new Dragon();
+            var babyJiren = new Jiren();
+            var cellJr = new Cell();
+            var buuJr = new MajiinBuu();
+            var coolerJr = new Cooler();
+            var gokuWack = new GokuBlack();
+            var miniFrieza = new Frieza();
             //TODO UNCOMMENT AFTER MONSTER ARE CREATED INDIVIDUALLY
             //Add the monsters to a collection
-            //List<Monster> monsters = new List<Monster>()
-            //{
-            //    rabbit,
-            //    babyRabbit, babyRabbit, babyRabbit,
-            //    vampire,
-            //    turtle,
-            //    babyTurtle, babyTurtle, babyTurtle,
-            //    dragon,
-            //    babyDragon, babyDragon, babyDragon
-            //};
+            List<Monster> monsters = new List<Monster>()
+            {
+                gokuBLack,
+                buuJr, babyJiren, coolerJr,
+                cell,
+                babyJiren, miniFrieza, buuJr,
+                jiren,
+                miniFrieza, cellJr, coolerJr,
+                frieza,
+                miniFrieza, cellJr, coolerJr,
+                buu,
+                buuJr,babyJiren, coolerJr,
+                cooler
+
+            };
 
             //Pick one at random to place in the room            
-            //int randomNbr = new Random().Next(monsters.Count);
-            //Monster monster = monsters[randomNbr];
-            //return monster;
+            int randomNbr = new Random().Next(monsters.Count);
+            Monster monster = monsters[randomNbr];
+            return monster;
+        }
     }
 }
