@@ -14,7 +14,7 @@ namespace DBZTrainingDungeon
             Console.WriteLine("@__\r\n  |  \"\"--.--.._                                             __..    ,--.\r\n  |       `.   \"-.'\"\"\\_...-----..._   ,--. .--..-----.._.\"\"|   |   /   /\r\n  |_   _    \\__   ).  \\           _/_ |   \\|  ||  ..    >  `.  |  /   /\r\n    | | `.   ._)  /|\\  \\ .-\"\"\"\":-\"   \"-.   `  ||  |.'  ,'`. |  |_/_  /\r\n    | |_.'   |   / \"\"`  \\  ===/  ..|..  \\     ||      < \"\"  `.  \"  |/__\r\n    `.      .    \\ ,--   \\-..-\\   /\"\\   /     ||  |>   )--   |    /    |\r\n     |__..-'__||__\\   |___\\ __.:-.._..-'_|\\___||____..-/  |__|--\"\"____/\r\n                           _______________________\r\n                          /                      ,'\r\n                         /      ___            ,'\r\n                        /   _.-'  ,'        ,-'   /\r\n                       / ,-' ,--.'        ,'   .'/\r\n                      /.'     `.         '.  ,' /\r\n                     /      ,-'       ,\"--','  /\r\n                          ,'        ,'  ,'    /\r\n                         ,-'      ,' .-'     /\r\n                      ,-'                   /\r\n                    ,:________________Seal_/\r\n\r\n");
 
 
-            Console.WriteLine("On today's episode...Bulma and the Capsule Corp, created a prototype called \"The Capsule Corp Training Dungeon\" that may change the way the Z Fighters train and grow stronger! With the newest threat looming Trunks offers to give it a try......Little does he know once you enter you lose all powers. Leaving trunks one option, to go  into battle using only his sword....Will this be an effective way to train?...What kind of enemies will he find inside??? FIND OUT ON THIS EPISODE OF DRAGON BALL Z!!!\n\n\n\n");
+            Console.WriteLine("On today's episode...Bulma and the Capsule Corp, created a prototype called \"The Capsule Corp Training Dungeon\" that may change the way the Z Fighters train and grow stronger! With the newest threat looming Trunks offers to give it a try......Little does he know once you enter you lose all powers. Leaving trunks one option, to go  into battle using only his sword....Will this be an effective way to train?...What kind of enemies will he find inside??? FIND OUT ON THIS EPISODE OF DRAGON BALL Z!!!\n\n");
             //ask how to format this to look better in the console
             
             
@@ -95,13 +95,13 @@ namespace DBZTrainingDungeon
                            {
                                //use green text to hightlight winning combat
                                Console.ForegroundColor = ConsoleColor.Green;
-                               //Console.WriteLine($"\nYou killed {monster.Name}!");UNCOMMENT AFTER MONSTERS ARE CREATED
+                               Console.WriteLine($"\nYou defeated {monster.Name}!...Now on to the next room!\n");
                                Console.ResetColor();
                                XP++;
                                #region Loot Drops
-                               //NOTE: This would require an "item class"
+                               //This would require an "item class"
                                //Player.Inventoty - List<Item>
-                               player.Life += (player.Life / 5);//player gets life back after successful battle.
+                               player.Life += (player.Life / 7);//player gets life back after successful battle.
                                #endregion
                                //Leave the inner loop and get a new monster and room
                                reload = true;
@@ -126,7 +126,6 @@ namespace DBZTrainingDungeon
 
                         case "V":
 
-                            Console.WriteLine("Villian");
                             Console.WriteLine(monster);
                             break;
 
@@ -156,13 +155,14 @@ namespace DBZTrainingDungeon
             #endregion
 
             //Output the final score and say goodbye
-            Console.WriteLine("You have gained: " + XP + " Training Experience" + (XP == 1 ? "." : "s.\n"));
+            Console.WriteLine("You have gained: " + XP + " Training Experience" + (XP == 1 ? "." : "."));
             Console.WriteLine("\n@    _.\r\n                         ,-\" .\\,-\"`.\r\n                       ,:   . /,-.  `.\r\n                      /\"     :,-  `   \\\r\n                     |.    .`/,. `.    \\\r\n                    /  /  /_\\)/_\\       .\r\n                   .  .  /' / \\ \"\\\r\n                   |  : ,' .   . \\ \\\\ . |\r\n                   |  : || |   | | || . '\r\n                   \\__\\_bo..  ...bo)L L/\r\n    T R U N K S      |9|\\_*_\" \"_*_/|?T\r\n                     \\(` --- L --- ')/\r\n     (future)       .'`-|   ___   |-:\r\n               .---\"  -. .   =   ,   `.\r\n               \"\"-._ --./ \"-._.-\"|     \"-._\r\n                  .-\"-. \\  \\      \\   _..-<_\r\n              .--\"     ) `. \\   /  | :-\"..  \\\r\n           .-'_     \\ ,'  \\\\\"`.,'\"\"   \\   `  |\r\n          /    `.    | \"-. `   \\    |/\"    | \\\r\n              .  \\      _ \\:|   |  ,|.\"\"\"\"\"| /\r\n         /   :    |.-\"\"\" | \\|`._'_.  |`.  .( \\\r\n        /|  '     ||_  .' `:'        |: `v \\  |\r\n       / | :      |  \"\")  :|         |:  |  | |\r\n       |          /|   /  :|         |:  /  / )\r\n       (         | /_.|...:|         /  |  |  |\r\n      / \\        /_..-----\"'         \"\"\"-,-   |\r\n     |          /`--\\                   |\\  `.)\r\n     |         |     |                ,/ `. `.\\\r\n     /   _Seal_|      \"._..---\"\"\"\"---./\\ ` `. )");
-
+            Console.ReadKey();
         }//end Main()
 
         #region Custom Methods
 
+        //Rooms
         private static string GetRoom()
         {
             string[] rooms =

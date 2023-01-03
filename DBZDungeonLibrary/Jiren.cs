@@ -30,7 +30,7 @@ namespace DBZDungeonLibrary
         }
         public override string ToString()
         {
-            return base.ToString() + (IsEnraged ? "Glowing red with rage!" : "His head is just so big....");
+            return base.ToString() + (IsEnraged ? " Glowing red with rage!" : " His head is just so big....");
         }
 
         public override int CalcDamage()

@@ -30,7 +30,7 @@ namespace DBZDungeonLibrary
         }
         public override string ToString()
         {
-            return base.ToString() + (IsSSR ? "Glowing pink with a strange aura!" : "His wig isn't even staying on....");
+            return base.ToString() + (IsSSR ? " Glowing pink with a strange aura!" : " His wig isn't even staying on....");
         }
 
         public override int CalcDamage()

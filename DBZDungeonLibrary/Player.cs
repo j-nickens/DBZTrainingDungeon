@@ -8,7 +8,6 @@ namespace DBZDungeonLibrary
 {
     public class Player : Character
     {
-        //Fields - Funny
 
         //Properties - People
         public Race PlayerRace { get; set; }

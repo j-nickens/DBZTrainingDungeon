@@ -29,7 +29,7 @@ namespace DBZDungeonLibrary
         }
         public override string ToString()
         {
-            return base.ToString() + (IsPerfectCooler ? "This is the final form!" : "Oh no, It's Cooler!!");
+            return base.ToString() + (IsPerfectCooler ? " This is the final form!" : " Oh no, It's Cooler!!");
         }
 
         public override int CalcDamage()

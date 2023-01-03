@@ -30,7 +30,7 @@ namespace DBZDungeonLibrary
         }
         public override string ToString()
         {
-            return base.ToString() + (IsKidBuu ? "HIS POWER LEVEL IS OVER 3000!! " : "This should be easy he is no where near as strong ");
+            return base.ToString() + (IsKidBuu ? " HIS POWER LEVEL IS OVER 3000!! " : " This should be easy he is no where near as strong ");
         }
 
         public override int CalcDamage()

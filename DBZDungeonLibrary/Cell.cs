@@ -29,7 +29,7 @@ namespace DBZDungeonLibrary
         }
         public override string ToString()
         {
-            return base.ToString() + (PerfectCell ? "THIS IS HIS PERFECT FORM....!!" : "His power level isn't very high he must not have absorbed anyone yet..");
+            return base.ToString() + (PerfectCell ? " THIS IS HIS PERFECT FORM....!!" : " His power level isn't very high he must not have absorbed anyone yet..");
         }
 
         public override int CalcBlock()

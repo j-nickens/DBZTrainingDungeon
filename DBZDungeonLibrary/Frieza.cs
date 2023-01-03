@@ -31,7 +31,7 @@ namespace DBZDungeonLibrary
         }
         public override string ToString()
         {
-            return base.ToString() + (IsFinalForm ? "This must be his final form..." : "It's Frieza!!!! ");
+            return base.ToString() + (IsFinalForm ? " This must be his final form..." : " It's Frieza!!!! ");
         }
 
         public override int CalcBlock()
