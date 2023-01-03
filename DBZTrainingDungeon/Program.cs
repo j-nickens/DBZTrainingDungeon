@@ -14,38 +14,38 @@ namespace DBZTrainingDungeon
             Console.WriteLine("@__\r\n  |  \"\"--.--.._                                             __..    ,--.\r\n  |       `.   \"-.'\"\"\\_...-----..._   ,--. .--..-----.._.\"\"|   |   /   /\r\n  |_   _    \\__   ).  \\           _/_ |   \\|  ||  ..    >  `.  |  /   /\r\n    | | `.   ._)  /|\\  \\ .-\"\"\"\":-\"   \"-.   `  ||  |.'  ,'`. |  |_/_  /\r\n    | |_.'   |   / \"\"`  \\  ===/  ..|..  \\     ||      < \"\"  `.  \"  |/__\r\n    `.      .    \\ ,--   \\-..-\\   /\"\\   /     ||  |>   )--   |    /    |\r\n     |__..-'__||__\\   |___\\ __.:-.._..-'_|\\___||____..-/  |__|--\"\"____/\r\n                           _______________________\r\n                          /                      ,'\r\n                         /      ___            ,'\r\n                        /   _.-'  ,'        ,-'   /\r\n                       / ,-' ,--.'        ,'   .'/\r\n                      /.'     `.         '.  ,' /\r\n                     /      ,-'       ,\"--','  /\r\n                          ,'        ,'  ,'    /\r\n                         ,-'      ,' .-'     /\r\n                      ,-'                   /\r\n                    ,:________________Seal_/\r\n\r\n");
 
 
-            Console.WriteLine("On today's episode...Bulma and the Capsule Corp, created a prototype called \"The Capsule Corp Training Dungeon\" that may change the way the Z Fighters train and grow stronger! With the newest threat looming Trunks offers to give it a try......Little does he know once you enter you lose all powers. Leaving trunks one option, to go  into battle using only his sword....Will this be an effective way to train?...What kind of enemies will he find inside??? FIND OUT ON THIS EPISODE OF DRAGON BALL Z!!!\n\n");
+            Console.WriteLine("On today's episode...Bulma and the Capsule Corp, created a prototype called \"The Capsule Corp Training Dungeon\" that may change the way the Z Fighters train and grow stronger! .....Little do they know once you enter they lose all powers they may have. Leaving the brave fighter one option, to go into battle using only Tapions Sword!....Will this be an effective way to train?...What kind of enemies will he find inside??? FIND OUT ON THIS EPISODE OF DRAGON BALL Z!!!\n\n");
             //ask how to format this to look better in the console
-            
-            
-            #endregion
 
-            #region Player Creation
 
-            #region Character Creator
-            //Let them choose their name
-
-            //Show them a list of precreated Weapons (Weapon.PickWeapon())
-
-            //Enum.GetValues<RAce>().ToList() -- see ClassicMonsters example in Enums.Cs
-
-            //Could also show  list of pre created players
             #endregion
 
             int XP = 0;//player score
 
+            
 
-            //Weapon(Weapon.PickWeapon());
+            #region Character Creator
+            //Let them choose their name
+            Console.Write("Hello There! What is your name? ");
+            string userName = Console.ReadLine();
+
+            Console.Clear();
+            //Enum.GetValues<RAce>().ToList() -- see ClassicMonsters example in Enums.Cs
+            //Could also show  list of pre created players
+            #endregion
+
+            #region
             Weapon w1 = new Weapon(1, 10, "The Brave Sword", 10, true, WeaponType.The_Brave_Sword);
-            //Console.WriteLine(w1);//Ask about how to add weapon choices.
+            Player player = new Player(userName, 75, 15, 45, Race.Hybrid, w1);
+            //Weapon(Weapon.PickWeapon());
+            //Weapon w1 = new Weapon(1, 10, "The Brave Sword", 10, true, WeaponType.The_Brave_Sword);
+            //Ask about how to add weapon choices.
 
             //Weapon w2 = new Weapon(1, 10, "The Z Sword", 7, true, WeaponType.Z_Sword);//Ask how to get this added in as an optional weapon
             //Add a switch for option to switch swords?? Do I need to make another weapon class in the Weapon.cs?
 
-            Player player = new Player("Future Trunks", 75, 15, 45, Race.Hybrid, w1);
-
+            //Player player = new Player(userName, 75, 15, 45, Race.Hybrid, w1);
             #endregion
-
 
             #region Main Game Loop
             bool quit = false;
@@ -63,7 +63,7 @@ namespace DBZTrainingDungeon
 
 
 
-                Monster monster = Monster.GetMonster(); 
+                Monster monster = Monster.GetMonster();
                 Console.WriteLine("IN THIS TRAINING ROOM: " + monster.Name);
                 //inner loop:
                 #region Gameplay Menu Loop
@@ -89,24 +89,24 @@ namespace DBZTrainingDungeon
                             //if (player.PlayerRace == Race.Elf)
                             //{ Combat.DoAttack(player, monster) }
                             #endregion
-                           Combat.DoBattle(player, monster);
-                           //check if monster is dead
-                           if (monster.Life <= 0)
-                           {
-                               //use green text to hightlight winning combat
-                               Console.ForegroundColor = ConsoleColor.Green;
-                               Console.WriteLine($"\nYou defeated {monster.Name}!...Now on to the next room!\n");
-                               Console.ResetColor();
-                               XP++;
-                               #region Loot Drops
-                               //This would require an "item class"
-                               //Player.Inventoty - List<Item>
-                               player.Life += (player.Life / 7);//player gets life back after successful battle.
-                               #endregion
-                               //Leave the inner loop and get a new monster and room
-                               reload = true;
-                           }
-                           break;
+                            Combat.DoBattle(player, monster);
+                            //check if monster is dead
+                            if (monster.Life <= 0)
+                            {
+                                //use green text to hightlight winning combat
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine($"\nYou defeated {monster.Name}!...Now on to the next room!\n");
+                                Console.ResetColor();
+                                XP++;
+                                #region Loot Drops
+                                //This would require an "item class"
+                                //Player.Inventoty - List<Item>
+                                player.Life += (player.Life / 7);//player gets life back after successful battle.
+                                #endregion
+                                //Leave the inner loop and get a new monster and room
+                                reload = true;
+                            }
+                            break;
 
                         case "R":
 
@@ -119,7 +119,7 @@ namespace DBZTrainingDungeon
 
                         case "H":
 
-                            
+
                             Console.WriteLine(player);
                             Console.WriteLine("Experience gained: " + XP);
                             break;
@@ -160,7 +160,7 @@ namespace DBZTrainingDungeon
             Console.ReadKey();
         }//end Main()
 
-        #region Custom Methods
+
 
         //Rooms
         private static string GetRoom()
@@ -178,9 +178,8 @@ namespace DBZTrainingDungeon
                 "So here we are in the martial arts tournament arena!",
             };
             return rooms[new Random().Next(rooms.Length)];
-            
+
         }//end GetRoom()
 
-        #endregion
-    }//end class
+    }//end class  
 }// end namespace
